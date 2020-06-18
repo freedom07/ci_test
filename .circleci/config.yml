@@ -12,8 +12,19 @@ jobs:
       - python/install-deps
       - python/save-cache
       - run:
-          command: ./manage.py test
+          name: install dependencies
+          command: |
+            python3 -m venv venv
+            . venv/bin/activate
+            pip install -r requirements.txt
+            pip install coverage codecov
+
+      - run:
           name: Test
+          command: |
+            . venv/bin/activate
+            coverage run test.py
+            codecov
 
 workflows:
   main:
