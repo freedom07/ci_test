@@ -1,14 +1,14 @@
-def func1(a, b):
+def add(a, b):
     return a + b
 
 
-def func2(a, b):
+def mul(a, b):
     return a * b
 
 
-def func3(a, b):
+def div(a, b):
     return a / b
 
 
-def func4(a, b):
+def sub(a, b):
     return a - b
