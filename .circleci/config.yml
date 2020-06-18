@@ -12,12 +12,14 @@ jobs:
       - python/install-deps
       - python/save-cache
       - run:
-          pip install -r requirements.txt
-          pip install coverage codecov
+          command: |
+            pip install -r requirements.txt
+            pip install coverage codecov
       - run:
           name: Test
-          coverage run test
-          codecov
+          command: |
+            coverage run test
+            codecov
 
 workflows:
   main:
